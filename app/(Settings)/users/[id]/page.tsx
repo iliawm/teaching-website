@@ -1,3 +1,4 @@
+import {Profile} from "@/Components/Profile";
 
 
 export default async function Users({ params,searchParams }: { params: Promise<{ id: string }>,
@@ -8,23 +9,32 @@ export default async function Users({ params,searchParams }: { params: Promise<{
 
     if (section === "profile") {
         page = <Profile />
-    } else if (section === "security") {
-        page = <Security />
-    } else if (section === "other") {
-        page = <Other />
-    } else if (section === "courses") {
-        page = <Courses />
-    } else if (section === "videos") {
-        page = <Videos />
-    } else if (section === "books") {
-        page = <Books />
-    } else if (section === "status") {
-        page = <Status />
-    } else if (section === "support") {
-        page = <Support />
-    } else if (section === "more") {
-        page = <More />
-    } else {
+    }
+    // else if (section === "security") {
+    //     page = <Security />
+    // }
+    // else if (section === "other") {
+    //     page = <Other />
+    // }
+    // else if (section === "courses") {
+    //     page = <Courses />
+    // }
+    // else if (section === "videos") {
+    //     page = <Videos />
+    // }
+    // else if (section === "books") {
+    //     page = <Books />
+    // }
+    // else if (section === "status") {
+    //     page = <Status />
+    // }
+    // else if (section === "support") {
+    //     page = <Support />
+    // }
+    // else if (section === "more") {
+    //     page = <More />
+    // }
+    else {
         page = <Profile />
     }
 
@@ -32,7 +42,7 @@ export default async function Users({ params,searchParams }: { params: Promise<{
         <div className={"w-screen h-screen bg-gray-200 flex justify-end"}>
             <div className="md:w-8/10 h-full flex justify-center overflow-y-scroll">
                 <div className="md:w-9/10 h-full flex border-1 border-gray-300 relative top-20 bg-gray-200">
-                    {page}
+                    { page }
                 </div>
             </div>
         </div>
