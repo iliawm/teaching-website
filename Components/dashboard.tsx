@@ -8,7 +8,7 @@ import { CgMoreR } from "react-icons/cg";
 
 export function Dashboard({ id }: { id: string }) {
     return (
-        <div className={"w-[20%] h-[100%] flex flex-col bg-white absolute z-30 min-w-[170px]"}>
+        <div className={"w-[20%] h-[100%] flex flex-col bg-white absolute z-30 min-w-[170px] "}>
             <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center">
                 Dashboard
             </div>

@@ -39,7 +39,7 @@ export default async function Users({ params,searchParams }: { params: Promise<{
     }
 
     return (
-        <div className={"w-screen h-screen bg-gray-200 flex justify-end"}>
+        <div className={"absolute w-full h-full bg-gray-200 flex justify-end "}>
             <div className="md:w-8/10 h-full flex justify-center overflow-y-scroll">
                 <div className="md:w-9/10 h-full flex border-1 border-gray-300 relative top-20 bg-gray-200">
                     { page }
