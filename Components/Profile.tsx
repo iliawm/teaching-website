@@ -1,19 +1,37 @@
 import Image from "next/image";
+import { CiLocationOn } from "react-icons/ci";
+import { FaStar } from "react-icons/fa6";
 
 export function Profile() {
     return (
         <div className={"flex flex-col w-full p-3"}>
-        <div className={"w-ful h-1/10 font-bold flex justify-start items-center text-3xl pl-15"}>
+        <div className={"w-ful h-1/10 font-extrabold flex justify-start items-center text-4xl pl-15"}>
             Profile
         </div>
-        <div className={"w-full h-9/10 font-bold flex justify-start f pl-25 max-h-[1080px]"}>
-                <div className={"leftside w-1/2 h-full pt-20 flex justify-center items-start "}>
-                    <div className="w-8/10 h-6/10 flex justify-center items-start rounded-lg shadow-2xl shadow-gray-300 p-5 right-10 max-w-[280px] min-h-[350px] min-w-[220px] relative">
+        <div className={"w-full h-9/10 font-bold flex justify-start  pl-20 max-h-270"}>
+                <div className={"leftside w-2/5 h-full pt-20 flex justify-center items-start "}>
+                    <div className="w-8/10 h-6/10 flex justify-start items-center rounded-lg shadow-2xl shadow-gray-300 p-5 right-10 max-w-70 max-h-102.5 min-h-87.5 min-w-55 relative flex-col">
                         <Image src={"/picture.png"} width={200} height={200} alt={""} className={"w-[100%] relative max-w-[150px]"}/>
+                        <div className={"w-full h-full flex flex-col justify-start p-3 gap-5 pt-6"}>
+                            <div className={"text-xl"}>Username</div>
+                            <div className={"text-md opacity-45 flex flex-row items-center gap-3 "}><CiLocationOn />
+                                description
+                            </div>
+                            <div className={"text-xl flex flex-row items-center gap-3  opacity-75"}>
+                                <div className={"text-yellow-500 text-2xl  flex items-center"}><FaStar /></div>
+                                <div className={"text-xl font-light "}> x / 5</div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div className={"rightside w-1/2 h-full"}>
-                    
+                <div className={"rightside w-3/5 h-full flex justify-center items-center"}>
+                    <div className={"w-full h-9/10 shadow-gray-300 shadow-xl rounded-2xl"}>
+                        <div className="top w-full h-1/10 flex p-5 text-2xl font-bold items-center ">
+                            profile
+                        </div>
+                        <div className="bot w-full h-9/10"></div>
+                    </div>
                 </div>
         </div>
         </div>
