@@ -26,7 +26,7 @@ export function Dashboard({ id }: { id: string }) {
                     <TiFolderDelete className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Other</div>
                 </Link>
-                {/*devider*/}
+                {/*division*/}
                 <div className="owned mt-2 text-base opacity-50">Owned</div>
                 <Link href={`/users/${id}?section=courses`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
                     <PiChalkboardTeacherLight className={"text-lg w-10"}/>
@@ -44,7 +44,7 @@ export function Dashboard({ id }: { id: string }) {
                     <MdOutlineMedicalInformation className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Status</div>
                 </Link>
-                {/*devider*/}
+                {/*division*/}
                 <div className="owned mt-2 text-base opacity-50">Advanced</div>
                 <Link href={`/users/${id}?section=support`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-green-500 transition-all duration-1000 ease-linear">
                     <MdSupportAgent className={"text-lg w-10"}/>

@@ -1,4 +1,6 @@
 import {Profile} from "@/Components/Profile";
+import Security from "@/Components/security";
+import Other from "@/Components/Other";
 
 
 export default async function Users({ params,searchParams }: { params: Promise<{ id: string }>,
@@ -10,12 +12,12 @@ export default async function Users({ params,searchParams }: { params: Promise<{
     if (section === "profile") {
         page = <Profile />
     }
-    // else if (section === "security") {
-    //     page = <Security />
-    // }
-    // else if (section === "other") {
-    //     page = <Other />
-    // }
+    else if (section === "security") {
+        page = <Security />
+    }
+    else if (section === "other") {
+        page = <Other />
+    }
     // else if (section === "courses") {
     //     page = <Courses />
     // }
@@ -41,7 +43,7 @@ export default async function Users({ params,searchParams }: { params: Promise<{
     return (
         <div className={"absolute w-full h-full bg-gray-200 flex justify-end "}>
             <div className="md:w-8/10 h-full flex justify-center overflow-y-scroll">
-                <div className="md:w-9/10 h-full flex border-1 border-gray-300 relative top-20 bg-gray-200">
+                <div className="md:w-9/10 h-full flex   relative top-20 bg-gray-200 justify-center items-center">
                     { page }
                 </div>
             </div>

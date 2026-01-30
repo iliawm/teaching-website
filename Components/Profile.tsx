@@ -4,6 +4,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa6";
 
 export function Profile() {
+    const rating = 2
+
     return (
         <div className={"flex flex-col w-full p-3"}>
         <div className={"w-ful h-1/10 font-extrabold flex justify-start items-center text-4xl pl-15"}>
@@ -20,7 +22,7 @@ export function Profile() {
                             </div>
                             <div className={"text-xl flex flex-row items-center gap-3  opacity-75"}>
                                 <div className={"text-yellow-500 text-2xl  flex items-center"}><FaStar /></div>
-                                <div className={"text-xl font-light flex"}> ? / 5</div>
+                                <div className={"text-xl font-light flex"}> {rating} / 5</div>
                             </div>
 
                         </div>
@@ -34,7 +36,7 @@ export function Profile() {
                         <div className="bot w-full h-9/10 flex p-5 py-0 text-sm font-medium flex-col items-start">
                             <div className={"opacity-60 mb-4"}>your accounts info lives here</div>
                             <div className={"opacity-60 mb-4"}>phone</div>
-                            <input type="number" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10"}/>
+                            <input type="tel" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10"}/>
                             <div className={"opacity-60 mb-4"}>Email</div>
                             <input type="email" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10"}/>
                             <div className={"opacity-60 mb-4"}>username</div>
