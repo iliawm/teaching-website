@@ -9,7 +9,7 @@ import { CgMoreR } from "react-icons/cg";
 export function Dashboard({ id }: { id: string }) {
     return (
         <div className={"w-[20%] h-full flex flex-col bg-white absolute z-30 min-w-42.5 "}>
-            <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center">
+            <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center font-bold">
                 Dashboard
             </div>
             <div className="custom-scrollbar w-full h-75/100 text-xl items-start flex flex-col justify-start p-1 gap-1 bg-white overflow-y-scroll overflow-x-hidden">
