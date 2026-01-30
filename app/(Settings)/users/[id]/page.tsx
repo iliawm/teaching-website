@@ -5,6 +5,8 @@ import {Books} from "@/Components/Books";
 import {Status} from "@/Components/status";
 import Security from "@/Components/security";
 import Other from "@/Components/Other";
+import {Support} from "@/Components/Support";
+import {More} from "@/Components/More";
 
 
 export default async function Users({ params,searchParams }: { params: Promise<{ id: string }>,
@@ -34,12 +36,12 @@ export default async function Users({ params,searchParams }: { params: Promise<{
     else if (section === "status") {
         page = <Status />
     }
-    // else if (section === "support") {
-    //     page = <Support />
-    // }
-    // else if (section === "more") {
-    //     page = <More />
-    // }
+    else if (section === "support") {
+        page = <Support />
+    }
+    else if (section === "more") {
+        page = <More />
+    }
 
 
     return (
