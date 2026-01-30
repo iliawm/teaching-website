@@ -3,6 +3,8 @@ import {Courses} from "@/Components/courses";
 import {Video} from "@/Components/Video";
 import {Books} from "@/Components/Books";
 import {Status} from "@/Components/status";
+import Security from "@/Components/security";
+import Other from "@/Components/Other";
 
 
 export default async function Users({ params,searchParams }: { params: Promise<{ id: string }>,
@@ -14,14 +16,14 @@ export default async function Users({ params,searchParams }: { params: Promise<{
     if (section === "profile") {
         page = <Profile />
     }
-    // else if (section === "security") {
-    //     page = <Security />
-    // }
-    // else if (section === "other") {
-    //     page = <Other />
-    // }
+        else if (section === "security") {
+            page = <Security />
+    }
+    else if (section === "other") {
+        page = <Other />
+    }
     else if (section === "courses") {
-         page = <Courses />
+        page = <Courses />
     }
     else if (section === "videos") {
         page = <Video />
