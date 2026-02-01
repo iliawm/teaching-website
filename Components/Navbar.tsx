@@ -5,8 +5,8 @@ export const Navbar = () => {
     const logged_in = false
     const id = 1
     return (
-        <div className="w-full flex justify-center mb-10 absolute" >
-        <div className="bg-indigo-400 text-white flex justify-between items-center w-19/20 h-[90px] rounded-b-4xl px-7 ">
+        <div className="w-full  flex justify-center mb-10 relative" >
+        <div className="bg-white text-black flex justify-between items-center w-19/20 h-15.5 rounded-full px-7 opacity-60">
             <div className="top-r h-full flex items-center justify-start gap-6" >
                 {logged_in?
                 <Link href={""} className="acc w-15 text-4xl flex justify-center">

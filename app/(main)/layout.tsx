@@ -1,7 +1,7 @@
 
 import "@/app/globals.css";
 
-import {Navbar} from "@/Components/Navbar";
+
 
 
 export default function RootLayout({
@@ -11,7 +11,6 @@ export default function RootLayout({
 }>) {
   return (
    <>
-      <Navbar/>
         {children}
    </>
   );
