@@ -1,15 +1,39 @@
 
 import {Navbar} from "@/Components/Navbar";
 import TextType from "@/components/TextType";
-
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
-import TiltedCard from "@/components/TiltedCard";
+
+import Antigravity from "@/components/Antigravity";
+import Image from "next/image";
+import {MdArrowForwardIos} from "react-icons/md";
+import {MVideo} from "@/Components/MainpageVideo";
 export default function Home() {
   return (
     <div className={"min-w-screen min-h-screen h-1200"}>
-      <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center p-10 rounded-b-4xl flex-col">
-          <div className={"h-2/10 w-full"}>
-              <Navbar/>
+      <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center p-10 rounded-b-4xl flex-col " >
+          <div className={"absolute w-full h-full z-30"}>
+              <Antigravity
+                  count={300}
+                  magnetRadius={6}
+                  ringRadius={2}
+                  waveSpeed={0.4}
+                  waveAmplitude={1}
+                  particleSize={1.5}
+                  lerpSpeed={0.05}
+                  color="red"
+                  autoAnimate
+                  particleVariance={1}
+                  rotationSpeed={0}
+                  depthFactor={1}
+                  pulseSpeed={3}
+                  particleShape="capsule"
+                  fieldStrength={10}
+              />
+          </div>
+
+          <div className={"h-2/10 w-full z-50"}>
+              <Navbar />
           </div>
           <div className={"h-8/10 w-full flex "}>
 
@@ -21,7 +45,7 @@ export default function Home() {
     <div className={"h-fit w-full flex justify-end"}>
           <div className="my-10 flex flex-row-reverse items-baseline justify-center gap-1 w-fit" dir="rtl" >
                 <span className="font-extrabold text-3xl text-white">
-        اف پی او
+        فپو
     </span>
               <span className="font-extrabold text-3xl text-white">
         زبان
@@ -36,17 +60,17 @@ export default function Home() {
         فراتر از کلمات، مسلط به دنیا؛ آموزشگاه زبان اف‌پی‌او. با ما، یادگیری زبان نه یک چالش، که یک تجربه لذت‌بخش و ماندگار است
     </div>
     <div className={"w-full h-fit mt-10 flex justify-end mb-10"}>
-    <div className="h-10 w-30  text-white text-lg bg-red-500 rounded-2xl flex justify-center items-center font-bold t">
+    <div className="h-10 w-30  text-white text-lg bg-red-500 rounded-2xl flex justify-center items-center font-bold cursor-pointer z-50">
         تماس با ما
     </div>
     </div>
 </div>
+      </div>
 
       </div>
-      </div>
-    <div className={"w-full h-full flex items-end flex-col"}>
+    <div className={"w-full h-fit flex items-end flex-col Courses "}>
         <TextType
-            text={["دوره ها"]}
+            text={["لیست دوره ها"]}
             typingSpeed={90}
             pauseDuration={5000}
             showCursor
@@ -54,90 +78,196 @@ export default function Home() {
             texts={["", ""]}
             deletingSpeed={50}
             cursorBlinkDuration={0.5} variableSpeed={undefined} onSentenceComplete={undefined}    className={"text-indigo-500 text-3xl mt-10 mr-10 font-bold"}    />
-        <div className={"w-full h-90 p-10 overflow-x-scroll flex gap-10 overflow-y-hidden"}>
+        <div className={"w-full h-140 p-10 overflow-x-scroll flex gap-10 pb-0 overflow-y-hidden items-center "}>
 
 
-       <Link href={"/"} className={"w-75 h-75  shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
+            <Link href={"/"} className={"w-75 h-fit shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
+                <CardContainer className="w-full h-full " containerClassName="py-0">
+                    <CardBody className="bg-white relative group/card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-full h-full rounded-xl p-6 border">
+                        <CardItem translateZ="100" className="w-full h-full">
+                            <Image
+                                src="/temp.png"
+                                height={1000}
+                                width={1000}
+                                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                                alt="product"
+                            />
+                        </CardItem>
 
-            <TiltedCard
-                imageSrc="/picture.png"
-                altText=""
-                captionText=""
-                containerHeight="100%"
-                containerWidth="100%"
-                imageHeight="100%"
-                imageWidth="100%"
-                rotateAmplitude={12}
-                scaleOnHover={1.05}
-                showMobileWarning={false}
-                showTooltip={false}
-                displayOverlayContent={false}
+                        <CardItem
+                            translateZ="50"
+                            className="text-xl font-bold text-neutral-800 dark:text-white mt-4"
+                        >
+                            دوره زبان سطح c1
+                        </CardItem>
 
+                        <CardItem
+                            as="p"
+                            translateZ="60"
+                            className="text-neutral-500 text-sm mt-2 dark:text-neutral-300"
+                        >
+                            آموزش عالی دوره زبان
+                        </CardItem>
 
-            />
+                        <div className="flex items-center mt-6  justify-end">
+
+                            <CardItem
+                                translateZ={20}
+                                className="px-6 py-2 rounded-xl bg-indigo-400 dark:bg-white dark:text-black text-white text-sm font-bold"
+                            >
+                                <MdArrowForwardIos />
+                            </CardItem>
+                        </div>
+                    </CardBody>
+                </CardContainer>
+            </Link>
+            <Link href={"/"} className={"w-75 h-fit shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
+            <CardContainer className="w-full h-full " containerClassName="py-0">
+                <CardBody className="bg-white relative group/card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-full h-full rounded-xl p-6 border">
+                    <CardItem translateZ="100" className="w-full h-full">
+                        <Image
+                            src="/temp.png"
+                            height={1000}
+                            width={1000}
+                            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                            alt="product"
+                        />
+                    </CardItem>
+
+                    <CardItem
+                        translateZ="50"
+                        className="text-xl font-bold text-neutral-800 dark:text-white mt-4"
+                    >
+                        دوره زبان سطح c1
+                    </CardItem>
+
+                    <CardItem
+                        as="p"
+                        translateZ="60"
+                        className="text-neutral-500 text-sm mt-2 dark:text-neutral-300"
+                    >
+                        آموزش عالی دوره زبان
+                    </CardItem>
+
+                    <div className="flex items-center mt-6  justify-end">
+
+                        <CardItem
+                            translateZ={20}
+                            className="px-6 py-2 rounded-xl bg-indigo-400 dark:bg-white dark:text-black text-white text-sm font-bold"
+                        >
+                            <MdArrowForwardIos />
+                        </CardItem>
+                    </div>
+                </CardBody>
+            </CardContainer>
         </Link>
-            <Link href={"/"} className={"w-75 h-75  shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
-
-                <TiltedCard
-                    imageSrc="/picture.png"
-                    altText=""
-                    captionText=""
-                    containerHeight="100%"
-                    containerWidth="100%"
-                    imageHeight="100%"
-                    imageWidth="100%"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip={false}
-                    displayOverlayContent={false}
 
 
-                />
-            </Link>
-            <Link href={"/"} className={"w-75 h-75  shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
-
-                <TiltedCard
-                    imageSrc="/picture.png"
-                    altText=""
-                    captionText=""
-                    containerHeight="100%"
-                    containerWidth="100%"
-                    imageHeight="100%"
-                    imageWidth="100%"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip={false}
-                    displayOverlayContent={false}
-
-
-                />
-            </Link>
-            <Link href={"/"} className={"w-75 h-75  shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
-
-                <TiltedCard
-                    imageSrc="/picture.png"
-                    altText=""
-                    captionText=""
-                    containerHeight="100%"
-                    containerWidth="100%"
-                    imageHeight="100%"
-                    imageWidth="100%"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip={false}
-                    displayOverlayContent={false}
-
-
-                />
-            </Link>
 
 
 
         </div>
     </div>
+        <div className={"w-full h-fit flex items-end flex-col Books bg-[#EEF1FA]"}>
+            <TextType
+                text={["لیست کتاب ها"]}
+                typingSpeed={90}
+                pauseDuration={5000}
+                showCursor
+                cursorCharacter=""
+                texts={["", ""]}
+                deletingSpeed={50}
+                cursorBlinkDuration={0.5} variableSpeed={undefined} onSentenceComplete={undefined}    className={"text-indigo-500 text-3xl mt-10 mr-10 font-bold"}    />
+            <div className={"w-full h-140 p-10 pb-0 overflow-x-scroll flex gap-10 overflow-y-hidden items-center "}>
+
+
+                <Link href={"/"} className={"w-75 h-fit shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
+                    <CardContainer className="w-full h-full " containerClassName="py-0">
+                        <CardBody className="bg-white relative group/card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-full h-full rounded-xl p-6 border">
+                            <CardItem translateZ="100" className="w-full h-full">
+                                <Image
+                                    src="/temp.png"
+                                    height={1000}
+                                    width={1000}
+                                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                                    alt="product"
+                                />
+                            </CardItem>
+
+                            <CardItem
+                                translateZ="50"
+                                className="text-xl font-bold text-neutral-800 dark:text-white mt-4"
+                            >
+                                دوره زبان سطح c1
+                            </CardItem>
+
+                            <CardItem
+                                as="p"
+                                translateZ="60"
+                                className="text-neutral-500 text-sm mt-2 dark:text-neutral-300"
+                            >
+                                آموزش عالی دوره زبان
+                            </CardItem>
+
+                            <div className="flex items-center mt-6  justify-end">
+
+                                <CardItem
+                                    translateZ={20}
+                                    className="px-6 py-2 rounded-xl bg-indigo-400 dark:bg-white dark:text-black text-white text-sm font-bold"
+                                >
+                                    <MdArrowForwardIos />
+
+                                </CardItem>
+                            </div>
+                        </CardBody>
+                    </CardContainer>
+                </Link>
+                <Link href={"/"} className={"w-75 h-fit shadow-2xl shadow-gray-400 rounded-2xl min-w-45 shrink-0"}>
+                <CardContainer className="w-full h-full " containerClassName="py-0">
+                    <CardBody className="bg-white relative group/card hover:shadow-2xl hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-full h-full rounded-xl p-6 border">
+                        <CardItem translateZ="100" className="w-full h-full">
+                            <Image
+                                src="/temp.png"
+                                height={1000}
+                                width={1000}
+                                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                                alt="product"
+                            />
+                        </CardItem>
+
+                        <CardItem
+                            translateZ="50"
+                            className="text-xl font-bold text-neutral-800 dark:text-white mt-4"
+                        >
+                            دوره زبان سطح c1
+                        </CardItem>
+
+                        <CardItem
+                            as="p"
+                            translateZ="60"
+                            className="text-neutral-500 text-sm mt-2 dark:text-neutral-300"
+                        >
+                            آموزش عالی دوره زبان
+                        </CardItem>
+
+                        <div className="flex  items-center mt-6  justify-end">
+
+                            <CardItem
+                                translateZ={20}
+                                className="px-6 py-2 rounded-xl bg-indigo-400 dark:bg-white dark:text-black text-white text-sm font-bold  "
+                            >
+                                <MdArrowForwardIos />
+
+                            </CardItem>
+                        </div>
+                    </CardBody>
+                </CardContainer>
+            </Link>
+            </div>
+        </div>
+        <div className={"w-full h-200 "}>
+            <MVideo/>
+        </div>
       </div>
   );
 }

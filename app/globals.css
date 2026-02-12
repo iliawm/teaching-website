@@ -54,18 +54,23 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover , .courses::-webkit-scrollbar-thumb:hover{
     background: #4f46e5;
 }
+@keyframes moveRight {
+    0% { background-position: 0 center; }
+    100% { background-position: 200% center; }
+}
+
 .Hero-img {
-
-
-    background-size: cover;
-    background-position: center;
+    background-size: 200% auto;
+    background-position: 0 center;
     background-repeat: repeat-x;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     display: inline-block;
+    animation: moveRight 10s linear infinite;
 }
+
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
@@ -149,4 +154,23 @@
   body {
     @apply bg-background text-foreground;
     }
+}
+
+.custom-scroll-stack {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+}
+
+.custom-scroll-stack .scroll-stack-inner {
+    width: 100vw !important;
+    max-width: none !important;
+}
+
+.custom-stack-item {
+    width: 100vw !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
