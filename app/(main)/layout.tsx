@@ -1,6 +1,6 @@
 
 import "@/app/globals.css";
-
+import { Analytics } from "@vercel/analytics/next"
 
 
 
