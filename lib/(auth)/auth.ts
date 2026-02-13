@@ -18,7 +18,7 @@ export const auth = betterAuth({
     secret: process.env.BETTER_AUTH_SECRET!,
     trustedOrigins: [
         'http://localhost:3000',
-        'https://*.vercel.app',
+        'https://teaching-website-roan.vercel.app',
         baseURL
     ],
     database: mongodbAdapter(db, {
