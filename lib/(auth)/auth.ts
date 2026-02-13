@@ -2,27 +2,27 @@ import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import {MongoClient} from "mongodb";
 import {headers} from "next/headers";
-import {redirect} from "next/navigation";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-const client = new MongoClient(process.env.MONGODB_URI);
+const client = new MongoClient(process.env.MONGODB_URI!);
 const db = client.db()
 
+const baseURL = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+
 export const auth = betterAuth({
+    baseURL,
     database: mongodbAdapter(db, {
         client,
     }),
-    emailAndPassword:
-        {
-            enabled: true,
-        }
+    emailAndPassword: {
+        enabled: true,
+    }
 });
-export async function getSession(){
 
-const result = await auth.api.getSession({
+export async function getSession(){
+    const result = await auth.api.getSession({
         headers: await headers()
     })
-return result;
+    return result;
 }
-

@@ -1,7 +1,7 @@
 
 import "@/app/globals.css"
 import {Dashboard} from "@/Components/dashboard";
-import {getSession} from "@/lib/(auth)/auth";
+
 import Link from "next/link";
 
 
