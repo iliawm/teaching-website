@@ -12,6 +12,8 @@ const baseURL = process.env.VERCEL_URL
 
 export const auth = betterAuth({
     baseURL,
+    secret: process.env.BETTER_AUTH_SECRET!,
+    trustedOrigins: [baseURL],
     database: mongodbAdapter(db, {
         client,
     }),
