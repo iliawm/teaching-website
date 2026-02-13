@@ -3,12 +3,15 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import {MongoClient} from "mongodb";
 import {headers} from "next/headers";
 
-const client = new MongoClient(process.env.MONGODB_URI!);
-const db = client.db()
-
 const baseURL = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : 'http://localhost:3000';
+
+const client = new MongoClient(process.env.MONGODB_URI!, {
+    tls: true,
+    tlsAllowInvalidCertificates: true,
+});
+const db = client.db();
 
 export const auth = betterAuth({
     baseURL,
