@@ -1,5 +1,5 @@
 
-import {Navbar} from "@/Components/Navbar";
+import Navbar from "@/Components/Navbar";
 import TextType from "@/components/TextType";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
@@ -45,7 +45,7 @@ export default function Home() {
     <div className={"h-fit w-full flex justify-end"}>
           <div className="my-10 flex flex-row-reverse items-baseline justify-center gap-1 w-fit" dir="rtl" >
                 <span className="font-extrabold text-3xl text-white">
-        فپو
+        
     </span>
               <span className="font-extrabold text-3xl text-white">
         زبان

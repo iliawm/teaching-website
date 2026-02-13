@@ -5,10 +5,15 @@ import { TiFolderDelete } from "react-icons/ti";
 import { MdVideoSettings , MdOutlineMedicalInformation , MdSupportAgent } from "react-icons/md";
 import { PiChalkboardTeacherLight ,PiBooks } from "react-icons/pi";
 import { CgMoreR } from "react-icons/cg";
+import {getSession} from "@/lib/(auth)/auth";
 
-export function Dashboard({ id }: { id: string }) {
+
+export async function Dashboard() {
+    const  session =await getSession()
+
+
     return (
-        <div className={"w-[20%] h-full flex flex-col bg-white absolute z-30 min-w-42.5 "}>
+        <div className={`w-[20%] h-full flex flex-col bg-white absolute z-30 min-w-42.5 ${session?.user?"":"hidden"}`}>
             <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center font-bold">
                 Dashboard
             </div>

@@ -1,6 +1,8 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import {MongoClient} from "mongodb";
+import {headers} from "next/headers";
+import {redirect} from "next/navigation";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -16,3 +18,11 @@ export const auth = betterAuth({
             enabled: true,
         }
 });
+export async function getSession(){
+
+const result = await auth.api.getSession({
+        headers: await headers()
+    })
+return result;
+}
+

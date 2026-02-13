@@ -5,7 +5,7 @@ import {signIn} from "@/lib/(auth)/auth-cient";
 import {useRouter} from "next/navigation";
 
 const SignIn = () => {
-    const [name,SetName] = useState("");
+    
     const [pass,SetPass] = useState("");
     const [email,setEmail] = useState("");
 
@@ -27,7 +27,7 @@ const SignIn = () => {
                 SetError(result.error.message ?? "failed to sign in");
             }
             else {
-                router.push("/dashboard")
+                router.push("/dashboard?section=profile")
             }
 
         }
@@ -43,7 +43,7 @@ const SignIn = () => {
                 <div className={"bg-white w-100 h-fit rounded-xl shadow-xl shadow-gray-500  p-5"}>
                     <div className={"border-b pb-3 flex flex-col"}>
                         <h1 className={" text-4xl mb-4 font-semibold"}>SignIn</h1>
-                        <h3 className={"text-sm"}>don't have an account? <Link  href={"/auth/signup"}  className={"text-indigo-400"}>Signup</Link></h3>
+                        <h3 className={"text-sm"}>don&#39;t have an account? <Link  href={"/auth/signup"}  className={"text-indigo-400"}>Signup</Link></h3>
                     </div>
                     {error&&
                         <div className={"w-full rounded-md h-10 bg-destructive/85 flex justify-start items-center text-white  p-4"}>
@@ -68,7 +68,7 @@ const SignIn = () => {
                         </div>
 
                         <button type={"submit"} className={"bg-indigo-400 w-full h-15 rounded-lg text-white"} disabled={loading}>
-                            {loading ? "Creating account..." :"SignIn"}
+                            {loading ? "logging in..." :"SignIn"}
                         </button>
                     </form>
                 </div>

@@ -14,7 +14,7 @@ export function Profile() {
         <div className={"w-full h-9/10 font-bold flex justify-start  pl-20 max-h-270"}>
                 <div className={"leftside w-2/5 h-full pt-20 flex justify-center items-start "}>
                     <div className="w-8/10 h-fit flex justify-start items-center rounded-lg shadow-2xl shadow-gray-300 p-5 right-10 max-w-70 max-h-102.5 min-h-87.5 min-w-55 relative flex-col">
-                        <Image src={"/picture.png"} width={200} height={200} alt={""} className={"w-[100%] relative max-w-[150px]"}/>
+                        <Image src={"/picture.png"} width={1800} height={1800} alt={""} className={"w-[100%] relative max-w-[150px]"} priority/>
                         <div className={"w-full h-full flex flex-col justify-start p-3 gap-5 pt-6"}>
                             <div className={"text-xl"}>Username</div>
                             <div className={"text-md opacity-45 flex flex-row items-center gap-3 "}><CiLocationOn />
