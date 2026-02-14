@@ -10,7 +10,7 @@ import {MdArrowForwardIos} from "react-icons/md";
 import {MVideo} from "@/Components/MainpageVideo";
 export default function Home() {
   return (
-    <div className={"min-w-screen min-h-screen h-1200"}>
+    <div className={"min-w-screen min-h-screen h-fit"}>
       <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center p-10 rounded-b-4xl flex-col " >
           <div className={"absolute w-full h-full z-30"}>
               <Antigravity
@@ -38,25 +38,25 @@ export default function Home() {
           <div className={"h-8/10 w-full flex "}>
 
 
-          <div className="w-1/2 h-full">
-
-          </div>
-<div className="w-1/2 h-full ">
+          {/*<div className="w-1/2 h-full">*/}
+          
+          {/*</div>*/}
+<div className="w-full h-full ">
     <div className={"h-fit w-full flex justify-end"}>
           <div className="my-10 flex flex-row-reverse items-baseline justify-center gap-1 w-fit" dir="rtl" >
                 <span className="font-extrabold text-3xl text-white">
         
     </span>
-              <span className="font-extrabold text-3xl text-white">
+              <span className="font-extrabold  lg:text-3xl text-white text-2xl">
         زبان
     </span>
 
-              <h1 className="Hero-img font-extrabold text-6xl bg-[url('/Back.jpg')]">
+              <h1 className="Hero-img font-extrabold md:text-6xl bg-[url('/Back.jpg')] text-5xl ">
                   آموزشگاه
               </h1>
           </div>
           </div>
-    <div className="h-fit w-full flex justify-end text-white text-lg font-bold text-end">
+    <div className="h-fit w-full flex justify-end text-white md:text-lg font-bold text-end ">
         فراتر از کلمات، مسلط به دنیا؛ آموزشگاه زبان اف‌پی‌او. با ما، یادگیری زبان نه یک چالش، که یک تجربه لذت‌بخش و ماندگار است
     </div>
     <div className={"w-full h-fit mt-10 flex justify-end mb-10"}>
@@ -265,7 +265,7 @@ export default function Home() {
             </Link>
             </div>
         </div>
-        <div className={"w-full h-200 "}>
+        <div className={"w-full h-fit mb-3 "}>
             <MVideo/>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { VideoPlayer } from "@/components/ui/video-player";
 
 export function MVideo() {
     return (
-        <div className={"w-full h-150 bg-indigo-600"}>
+        <div className={"w-full h-fit bg-indigo-600"}>
             <div style={{ width: '100%', height: 600, position: 'relative' }} suppressHydrationWarning>
                 <LiquidEther
                     colors={[ '#FFFFFF', '#FF0000', '#FFFFFF' ]}
@@ -24,19 +24,19 @@ export function MVideo() {
                     autoResumeDelay={3000}
                     autoRampDuration={0.6}
                 />
-                <div className={"absolute top-0 left-0 z-10 flex p-4 w-full h-full"}>
-                    <div className={"w-1/2 flex flex-col h-full justify-center items-center p-4"}>
-                        <VideoPlayer className="w-full aspect-video rounded-lg overflow-hidden shadow-lg cursor-pointer hover:opacity-85">
+                <div className={"absolute top-0 left-0 z-10 flex p-4 w-full h-full md:flex-row flex-col-reverse"}>
+                    <div className={"w-full flex flex-col h-full justify-center items-center p-4"}>
+                        <VideoPlayer className="w-full aspect-video rounded-lg overflow-hidden shadow-lg cursor-pointer hover:opacity-85 max-w-182.5">
                             <video
                                 slot="media"
-                                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                                src="/roll.mp4"
                                 className="w-full h-full"
                                 controls
                                 suppressHydrationWarning
                             />
                         </VideoPlayer>
                     </div>
-                    <div className={"w-1/2 flex flex-col h-full p-10 justify-center items-end text-4xl text-white font-bold"}>آسون و بدون اتلاف وقت زبان یاد بگیر</div>
+                    <div className={"flex flex-col h-full p-10 justify-center items-end text-4xl text-white font-bold "}>آسون و بدون اتلاف وقت زبان یاد بگیر</div>
                 </div>
             </div>
         </div>
