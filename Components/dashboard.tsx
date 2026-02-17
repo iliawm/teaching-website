@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { VscAccount } from "react-icons/vsc";
 import { IoLockOpenOutline } from "react-icons/io5";
@@ -5,15 +6,14 @@ import { TiFolderDelete } from "react-icons/ti";
 import { MdVideoSettings , MdOutlineMedicalInformation , MdSupportAgent } from "react-icons/md";
 import { PiChalkboardTeacherLight ,PiBooks } from "react-icons/pi";
 import { CgMoreR } from "react-icons/cg";
-import {getSession} from "@/lib/(auth)/auth";
+import { useSearchParams } from "next/navigation";
 
-
-export async function Dashboard() {
-    const  session =await getSession()
-
+export function Dashboard() {
+    const searchParams = useSearchParams()
+    const sidebar = searchParams.get('sidebar')
 
     return (
-        <div className={`w-[20%] h-full flex flex-col bg-white absolute z-30 min-w-42.5 ${session?.user?"":"hidden"}`}>
+        <div className={`w-2/10 h-full flex flex-col bg-white absolute z-30 min-w-42.5 delay-200 ease-out transition-all ${sidebar === 'false' ? 'transform -translate-x-full ' : ''}`}>
             <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center font-bold">
                 Dashboard
             </div>

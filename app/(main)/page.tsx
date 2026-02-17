@@ -11,7 +11,7 @@ import {MVideo} from "@/Components/MainpageVideo";
 export default function Home() {
   return (
     <div className={"min-w-screen min-h-screen h-fit"}>
-      <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center p-10 rounded-b-4xl flex-col " >
+      <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center md:p-10 p-7 rounded-b-4xl flex-col " >
           <div className={"absolute w-full h-full z-30"}>
               <Antigravity
                   count={300}

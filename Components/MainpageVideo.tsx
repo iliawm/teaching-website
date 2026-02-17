@@ -24,8 +24,8 @@ export function MVideo() {
                     autoResumeDelay={3000}
                     autoRampDuration={0.6}
                 />
-                <div className={"absolute top-0 left-0 z-10 flex p-4 w-full h-full md:flex-row flex-col-reverse"}>
-                    <div className={"w-full flex flex-col h-full justify-center items-center p-4"}>
+                <div className={"absolute top-0 left-0 z-10 flex p-4 w-full h-full md:flex-row flex-col-reverse "} >
+                    <div className={"w-full flex flex-col h-full justify-center items-center p-4 z-50"}>
                         <VideoPlayer className="w-full aspect-video rounded-lg overflow-hidden shadow-lg cursor-pointer hover:opacity-85 max-w-182.5">
                             <video
                                 slot="media"

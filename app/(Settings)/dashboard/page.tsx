@@ -9,11 +9,13 @@ import {Support} from "@/Components/Support";
 import {More} from "@/Components/More";
 import {getSession} from "@/lib/(auth)/auth";
 
+import DashboardNavhandle from "@/Components/DashboardNavhandle";
 
-export default async function Users({ params,searchParams }: { params: Promise<{ id: string }>,
+
+export default async function Users({ searchParams }: { params: Promise<{ id: string }>,
     searchParams : Promise<{ section? : string}>}) {
     const  session =await getSession()
-    
+    console.log(await searchParams)
     const {section} = await searchParams
     let page;
 if (session?.user){
@@ -44,6 +46,9 @@ if (session?.user){
     else if (section === "more") {
         page = <More />
     }
+    else if(section === "closed"){
+        page = " "
+    }
 }
 else{
     page = <div>Not authorized</div>
@@ -51,6 +56,9 @@ else{
 }
     return (
         <div className={"absolute w-full h-full bg-gray-200 flex justify-end "}>
+
+                <DashboardNavhandle/>
+
             <div className={`${session?.user?"":"w-full md:w-full"} md:w-8/10 h-full flex justify-center overflow-y-scroll`}>
                 <div className={`md:w-9/10 h-full flex   relative bg-gray-200 justify-center items-center ${session?.user ? "top-20 " : "w-full md:w-full top-0 h-full"} `}>
 
