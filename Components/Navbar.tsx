@@ -12,7 +12,7 @@ export default async function  Navbar()  {
         <div className="bg-white w-full flex justify-between items-center h-15.5 rounded-full md:px-7 opacity-60 px-3">
             <div className="top-r h-full flex items-center justify-start gap-6" >
                 {logged_in?
-                    <Link href={`/dashboard`} className="acc w-12 h-12 text-2xl flex justify-center items-center bg-indigo-500 rounded-full text-white">
+                    <Link href={`dashboard?section=profile&sidebar=false`} className="acc w-12 h-12 text-2xl flex justify-center items-center bg-indigo-500 rounded-full text-white">
                     {`${logged_in.name[0]}`.toUpperCase()}
                 </Link> :
                     <Link href={"/auth/signin"} className="acc lg:w-15 lg:text-4xl flex justify-center text-3xl w-fit">

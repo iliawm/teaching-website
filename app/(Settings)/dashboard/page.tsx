@@ -55,13 +55,12 @@ else{
     
 }
     return (
-        <div className={"absolute w-full h-full bg-gray-200 flex justify-end "}>
+        <div className={"absolute w-full h-fit min-h-screen flex justify-end "}>
 
                 <DashboardNavhandle/>
 
             <div className={`${session?.user?"":"w-full md:w-full"} md:w-8/10 h-full flex justify-center overflow-y-scroll`}>
-                <div className={`md:w-9/10 h-full flex   relative bg-gray-200 justify-center items-center ${session?.user ? "top-20 " : "w-full md:w-full top-0 h-full"} `}>
-
+                <div className={`md:w-9/10 w-full flex min-w-screen md:min-w-fit h-screen  md:relative  justify-center items-center overflow-y-scroll ${session?.user ? "pt-20 " : "w-full md:w-full top-0 h-full"} `}>
                     { page }
                 </div>
             </div>

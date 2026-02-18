@@ -13,7 +13,7 @@ export function Dashboard() {
     const sidebar = searchParams.get('sidebar')
 
     return (
-        <div className={`w-2/10 h-full flex flex-col bg-white absolute z-30 min-w-42.5 delay-200 ease-out transition-all ${sidebar === 'false' ? 'transform -translate-x-full ' : ''}`}>
+        <div className={`w-2/10 h-full flex flex-col bg-white absolute z-30 min-w-42.5 delay-200 ease-out transition-all border border-gray-300 shadow4xl shadow-gray-700  ${sidebar === 'false' ? 'transform -translate-x-full ' : ''}`}>
             <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center font-bold">
                 Dashboard
             </div>

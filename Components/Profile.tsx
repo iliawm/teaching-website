@@ -7,13 +7,13 @@ export function Profile() {
     const rating = 2
 
     return (
-        <div className={"flex flex-col w-full p-3"}>
-        <div className={"w-ful h-1/10 font-extrabold flex justify-start items-center text-4xl pl-15"}>
+        <div className={"flex flex-col w-full p-3  min-w-screen md:min-w-fit pt-100 md:pt-20"}>
+        <div className={"w-full h-1/10 font-extrabold flex justify-start items-center text-4xl pt-10 md:pl-15"}>
             Profile
         </div>
-        <div className={"w-full h-9/10 font-bold flex justify-start  pl-20 max-h-270"}>
-                <div className={"leftside w-2/5 h-full pt-20 flex justify-center items-start "}>
-                    <div className="w-8/10 h-fit flex justify-start items-center rounded-lg shadow-2xl shadow-gray-300 p-5 right-10 max-w-70 max-h-102.5 min-h-87.5 min-w-55 relative flex-col">
+        <div className={"w-full h-9/10 font-bold flex md:justify-start md:pl-20 max-h-270 md:flex-row flex-col justify-center items-center gap-14"}>
+                <div className={"md:leftside w-full h-full pt-20 flex justify-center md:items-start "}>
+                    <div className="w-full h-fit flex justify-start items-center rounded-lg shadow-2xl shadow-gray-300 p-5 md:right-10 max-w-90 max-h-102.5 min-h-87.5 min-w-55 relative flex-col">
                         <Image src={"/picture.png"} width={1800} height={1800} alt={""} className={"w-[100%] relative max-w-[150px]"} priority/>
                         <div className={"w-full h-full flex flex-col justify-start p-3 gap-5 pt-6"}>
                             <div className={"text-xl"}>Username</div>
@@ -28,7 +28,7 @@ export function Profile() {
                         </div>
                     </div>
                 </div>
-                <div className={"rightside w-3/5 h-full flex justify-center items-center"}>
+                <div className={"rightside w-3/5 h-full flex justify-center items-center min-w-75"}>
                     <div className={"w-full h-fit shadow-gray-300 shadow-xl rounded-2xl"}>
                         <div className="top w-full h-1/10 flex p-5 text-2xl font-bold items-center ">
                             profile
@@ -41,7 +41,7 @@ export function Profile() {
                             <input type="email" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10"}/>
                             <div className={"opacity-60 mb-4"}>username</div>
                             <input type="email" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10"}/>
-                            <input type="submit" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10 hover:bg-gray-400 transition-all duration-500 ease-linear"} onClick={()=>{
+                            <input type="submit" className={"w-full h-10 border border-gray-300 rounded outline-0 focus:ring-0 mb-10 hover:bg-gray-400 transition-all duration-500 ease-linear cursor-pointer"} onClick={()=>{
 
                             }}/>
 
