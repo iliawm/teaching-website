@@ -1,8 +1,8 @@
 import mongoose from "mongoose"
 
-const { schema} = mongoose
+const { Schema } = mongoose
 
-const PurchaseSchema = new schema({
+const PurchaseSchema = new Schema({
     user: {type:schema.Types.ObjectId, ref:`User`, required:true},
     products:{type:schema.Types.ObjectId, ref:`Product`},
     purchaseDate: { type: Date, default: Date.now },
