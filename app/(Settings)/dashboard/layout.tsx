@@ -2,6 +2,7 @@
 import "@/app/globals.css"
 
 import DashMessages from "@/Ui/DashMessages";
+import {Suspense} from "react";
 
 
 
@@ -16,10 +17,12 @@ export default async function UserLayout({
     return (
         <>
 
-            
 
 
-            {children}
+
+            <Suspense fallback={<div>Loading...</div>}>
+                {children}
+            </Suspense>
         <DashMessages/>
         </>
     );
