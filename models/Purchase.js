@@ -3,8 +3,8 @@ import mongoose from "mongoose"
 const { Schema } = mongoose
 
 const PurchaseSchema = new Schema({
-    user: {type:schema.Types.ObjectId, ref:`User`, required:true},
-    products:{type:schema.Types.ObjectId, ref:`Product`},
+    user: {type:Schema.Types.ObjectId, ref:`User`, required:true},
+    products:{type:Schema.Types.ObjectId, ref:`Product`},
     purchaseDate: { type: Date, default: Date.now },
     price: { type: Number, required: true }
 
