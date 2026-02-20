@@ -1,7 +1,7 @@
 "use client"
 import {useState} from "react";
 import { IoCloseSharp } from "react-icons/io5";
-const Notification = () => {
+const DashMessages = () => {
     const [open,setOpen]= useState(true);
     const [Message,setMessage]= useState("please note that the side bar is accessible through the blue button on top of the page ");
 
@@ -14,4 +14,4 @@ const Notification = () => {
         </div>
     )
 }
-export default Notification
+export default DashMessages

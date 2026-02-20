@@ -8,12 +8,11 @@ import { PiChalkboardTeacherLight ,PiBooks } from "react-icons/pi";
 import { CgMoreR } from "react-icons/cg";
 import { useSearchParams } from "next/navigation";
 
-export function Dashboard() {
-    const searchParams = useSearchParams()
-    const sidebar = searchParams.get('sidebar')
+export function Dashboard({open, setOpenA}: {open: boolean, setOpenA: (v: boolean) => void}) {
+
 
     return (
-        <div className={`w-2/10 h-full flex flex-col bg-white absolute z-30 min-w-42.5 delay-200 ease-out transition-all border border-gray-300 shadow4xl shadow-gray-700  ${sidebar === 'false' ? 'transform -translate-x-full ' : ''}`}>
+        <div className={`w-6/10 md:w-100 h-full flex flex-col bg-white top-0 left-0 z-30 min-w-42.5 delay-200 ease-out transition-all border border-gray-300 shadow4xl shadow-gray-700 fixed  ${!open ? 'transform -translate-x-full ' : ''}`}>
             <div className="title h-[20%] w-full mb-5 text-2xl text-indigo-700 flex items-center justify-center font-bold">
                 Dashboard
             </div>
