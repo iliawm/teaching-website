@@ -5,12 +5,12 @@ import {getSession} from "@/lib/(auth)/auth";
 
 await mongoose.connect(process.env.MONGODB_URI!)
 
-export default async function Home() {
-    await mongoose.connect(process.env.MONGODB_URI!)
-    const products = await Product.find().lean()
+export async function GET() {
+    const products = await Product.find()
+    return NextResponse.json(products)
+}
 
-
-    export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest) {
     const session = await getSession()
     if (!session?.user || session.user.email !== 'iliabayat83@gmail.com') {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

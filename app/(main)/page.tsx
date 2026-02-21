@@ -3,7 +3,7 @@ import Navbar from "@/Components/Navbar";
 import TextType from "@/components/TextType";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
-
+import ProductModel from '@/models/product'
 import Antigravity from "@/components/Antigravity";
 import Image from "next/image";
 import {MdArrowForwardIos} from "react-icons/md";
@@ -18,15 +18,12 @@ type Product = {
     Category: string[]
 }
 
-export  default async function Home() {
-    const baseUrl = process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : 'http://localhost:3000'
+export default async function Home() {
+    await mongoose.connect(process.env.MONGODB_URI!)
+    const products = await ProductModel.find().lean()
 
-    const res = await fetch(`${baseUrl}/api/products`, { cache: 'no-store' })
-    const products = await res.json()
 
-    
+
     return (
     <div className={"min-w-screen min-h-screen h-fit"}>
       <div className="w-full h-fit flex items-center justify-end  bg-[url('/Hero.jpg')] bg-cover bg-center md:p-10 p-7 rounded-b-4xl flex-col " >
