@@ -10,7 +10,7 @@ import {MdArrowForwardIos} from "react-icons/md";
 import {MVideo} from "@/Components/MainpageVideo";
 import mongoose from 'mongoose'
 
-type Product = {
+export type Product = {
     _id: string
     title: string
     description: string
@@ -73,7 +73,7 @@ export default async function Home() {
           </div>
           </div>
     <div className="h-fit w-full flex justify-end text-white md:text-lg font-bold text-end ">
-        فراتر از کلمات، مسلط به دنیا؛ آموزشگاه زبان اف‌پی‌او. با ما، یادگیری زبان نه یک چالش، که یک تجربه لذت‌بخش و ماندگار است
+        فراتر از کلمات، مسلط به دنیا؛ آموزشگاه زبان . با ما، یادگیری زبان نه یک چالش، که یک تجربه لذت‌بخش و ماندگار است
     </div>
     <div className={"w-full h-fit mt-10 flex justify-end mb-10"}>
     <div className="h-10 w-30  text-white text-lg bg-red-500 rounded-2xl flex justify-center items-center font-bold cursor-pointer z-30">

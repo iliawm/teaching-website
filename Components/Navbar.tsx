@@ -4,6 +4,7 @@ import {VscAccount, VscBell} from "react-icons/vsc";
 import {useSession} from "@/lib/(auth)/auth-cient";
 import {useState} from "react";
 import Notification from "@/Ui/Notif";
+import { MdHome } from "react-icons/md";
 
 
 
@@ -14,7 +15,8 @@ export default function Navbar() {
     return (
         <div className="w-full  flex justify-center mb-10 relative" >
         <div className="bg-white w-full flex justify-between items-center h-15.5 rounded-full md:px-7 opacity-60 px-3">
-            <div className="top-r h-full flex items-center justify-start gap-6" >
+            <div className="w-full top-r h-full flex items-center justify-between " >
+                <div className={"flex items-center justify-start gap-6"}>
                 {logged_in?
                     <Link href={`dashboard?section=profile`} className="acc w-12 h-12 text-2xl flex justify-center items-center bg-indigo-500 rounded-full text-white">
                     {`${logged_in.name[0]}`.toUpperCase()}
@@ -31,6 +33,8 @@ export default function Navbar() {
                         }>
                     <VscBell />
                 </button>
+                </div>
+                
                
                 {/*<Link href={""} className="acc w-15 text-4xl flex justify-center">*/}
 
@@ -39,9 +43,9 @@ export default function Navbar() {
 
                 {/*</Link>*/}
             </div>
-            <div className="top-l h-full" >
-
-            </div>
+            <Link href={"/"} className="top-l md:w-15 lg:text-4xl flex justify-center text-4xl w-fit cursor-pointer hover:opacity-70 mr-2 text-indigo-600" >
+                <MdHome />
+            </Link>
         </div>
             <Notification open={open} setOpenA={setOpen}/>
             
