@@ -9,4 +9,5 @@ const PurchaseSchema = new Schema({
     price: { type: Number, required: true }
 
 })
+
 export default mongoose.models.Purchase || mongoose.model('Purchase', PurchaseSchema)
