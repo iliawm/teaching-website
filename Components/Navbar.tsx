@@ -5,6 +5,7 @@ import {useSession} from "@/lib/(auth)/auth-cient";
 import {useState} from "react";
 import Notification from "@/Ui/Notif";
 import { MdHome } from "react-icons/md";
+import {useRouter} from "next/navigation";
 
 
 
@@ -12,6 +13,7 @@ export default function Navbar() {
     const { data: session } = useSession()
     const logged_in = session?.user
     const [open,setOpen]=useState(false)
+    const router = useRouter()
     return (
         <div className="w-full  flex justify-center mb-10 relative" >
         <div className="bg-white w-full flex justify-between items-center h-15.5 rounded-full md:px-7 opacity-60 px-3">
@@ -27,7 +29,11 @@ export default function Navbar() {
                 }
                 <button className="acc lg:w-15 lg:text-4xl flex justify-center text-3xl w-fit cursor-pointer hover:opacity-70"
                         onClick={()=>{
-                            setOpen(!open)
+                            if (logged_in) {
+                                setOpen(!open)
+                            } else {
+                                router.push("/auth/signin")
+                            }
                         }
 
                         }>

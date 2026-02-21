@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
         ],
     },
 }
-module.exports = {
-    optimizeFonts: false
-}
+
 ;
 
 export default nextConfig;

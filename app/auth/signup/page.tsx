@@ -3,6 +3,7 @@ import Link from "next/link";
 import {useState} from "react";
 import {signUp} from "@/lib/(auth)/auth-cient";
 import {useRouter} from "next/navigation";
+import {IoHome} from "react-icons/io5";
 
 const SignUp = () => {
     const [name,SetName] = useState("");
@@ -40,6 +41,8 @@ async function handleSubmit(e: React.FormEvent) {
     return (
         <section>
             <div  className={"min-h-screen min-w-screen  bg-blue-50  flex items-center justify-center p-10"}>
+                <Link href={"/"} className={"rounded-2xl bg-indigo-600 w-14 h-14 top-0 right-0 mt-4 mr-5 fixed text-2xl text-white font-semibold flex items-center justify-center"}><IoHome /></Link>
+
                 <div className={"bg-white w-100 h-fit rounded-xl shadow-xl shadow-gray-500  p-5"}>
                     <div className={"border-b pb-3 flex flex-col"}>
                         <h1 className={" text-4xl mb-4 font-semibold"}>SignUp</h1>
