@@ -8,6 +8,7 @@ import Antigravity from "@/components/Antigravity";
 import Image from "next/image";
 import {MdArrowForwardIos} from "react-icons/md";
 import {MVideo} from "@/Components/MainpageVideo";
+import mongoose from 'mongoose'
 
 type Product = {
     _id: string
