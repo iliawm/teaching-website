@@ -11,6 +11,7 @@ export default function RootLayout({
 }>) {
   return (
    <>
+       <Analytics/>
         {children}
    </>
   );
