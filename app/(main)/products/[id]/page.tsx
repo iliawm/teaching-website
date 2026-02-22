@@ -4,20 +4,29 @@ import ProductModel from "@/models/product";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import {IoHome} from "react-icons/io5";
+import PurchaseButton from "@/Components/PurchaseButton";
+
+import {getSession} from "@/lib/(auth)/auth";
+import Purchase from "@/models/Purchase";
 
 export default async function ProductPage ({ params }: { params: Promise<{ id: string }> }) {
     await mongoose.connect(process.env.MONGODB_URI!)
     const { id }= await params
-    
+    const session = await getSession()
     const products = await ProductModel.findById( id ).lean()
+    const hasPurchased = session?.user?await Purchase.findOne({
+        user: session.user.id,
+        products: id }).lean() : false
     return (
-        <div className={"w-full bg-gray-200 min-h-screen flex text-center justify-center items-center h-fit p-5"}>
+        <div className={"w-full bg-gray-200 min-h-screen flex text-center justify-center items-center h-fit md:h-full p-5 mt-10"}>
             <Link href={"/"} className={"rounded-2xl bg-indigo-600 w-14 h-14 top-0 right-0 mt-4 mr-5 fixed text-2xl text-white font-semibold flex items-center justify-center"}><IoHome /></Link>
-            <div className={"h-fit w-full  bg-white  rounded-3xl flex  overflow-x-hidden overflow-y-scroll  scrollbar-hide flex-col gap-6 p-3 max-w-150"}>
-                <div className="">
+            <div className={"h-fit  w-full  bg-white  rounded-3xl flex  overflow-x-hidden overflow-y-hidden  scrollbar-hide flex-col md:flex-row gap-6 p-3 md:pb-30"}>
+                <div className="h-fit">
                 <Image src={products?.image || "/temp.png"} width={1800} height={1800} alt={products?.title || "product"} className={"rounded-3xl h-fit w-full "}/>
                 </div>
-                <div className={"flex flex-col items-end gap-3 "}>
+                
+                <div className="flex-col gap-2 flex md:w-full ">
+                <div className={"flex flex-col  items-end gap-3 "}>
                 <h1 className={"font-bold text-2xl text-end text-indigo-500"}> {products?.title}</h1>
                     <div className={"font-semibold text-lg text-end text-black/60"}> {products?.description}</div>
                 </div>
@@ -38,10 +47,16 @@ export default async function ProductPage ({ params }: { params: Promise<{ id: s
                         </div>
                     ))}
                     </div>
-                <button type={"submit"} className={"w-full  h-20 bg-indigo-600 text-2xl text-center text-white text-bold rounded-2xl"}>
-                    پرداخت
-                </button>
-
+                    {hasPurchased ?
+                        
+                        <Link href={"/dashboard?section=courses"}  className={"w-full flex  h-20 bg-indigo-600 text-2xl text-center text-white text-bold rounded-2xl  hover:opacity-90 cursor-pointer items-center justify-center md:top-50 relative"}>
+                            داشبورد 
+                        </Link>
+                        :
+                    <div className={"w-full h-full md:top-50 relative"}>
+                        <PurchaseButton productId={id} price={products?.price} />
+                    </div>}
+                </div>
             </div>
         </div>
     )
