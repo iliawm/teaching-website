@@ -7,8 +7,8 @@ export function Profile() {
     const rating = 2
 
     return (
-        <div className={"flex flex-col w-full p-3  min-w-screen md:min-w-fit pt-100 md:pt-20"}>
-        <div className={"w-full h-1/10 font-extrabold flex justify-start items-center text-4xl pt-10 md:pl-15"}>
+        <div className={"flex flex-col w-full   min-w-screen md:min-w-fit pt-100 md:pt-20"}>
+        <div className={"w-full h-1/10 font-extrabold flex justify-start items-center text-4xl pt-10 md:pl-15 pl-4"}>
             Profile
         </div>
         <div className={"w-full h-9/10 font-bold flex md:justify-start md:pl-20 max-h-270 md:flex-row flex-col justify-center items-center gap-14"}>

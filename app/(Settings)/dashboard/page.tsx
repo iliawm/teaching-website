@@ -11,8 +11,8 @@ import {More} from "@/Components/More";
 import DashboardNavhandle from "@/Components/DashboardNavhandle";
 import { useSearchParams } from "next/navigation";
 import { useSession } from "@/lib/(auth)/auth-cient";
-import {useEffect, useState} from "react";
 import {Dashboard} from "@/Components/dashboard";
+import {useState} from "react";
 
 export default function DashboardClient() {
     const searchParams = useSearchParams()
