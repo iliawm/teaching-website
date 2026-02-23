@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
     const { productId, price } = await request.json()
 
-    console.log('Received:', { productId, price })
+    
     const existing = await Purchase.findOne({
         user: session.user.id,
         products: productId
@@ -33,3 +33,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(purchase)
 }
+export async function GET() {
+    const session = await getSession()
+
+    if (!session?.user) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const purchases = await Purchase.find({ user: session.user.id }).populate('products')
+    return NextResponse.json(purchases.map(p => p.products))
+}
+
