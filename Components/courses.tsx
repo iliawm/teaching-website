@@ -14,14 +14,13 @@ export type Product = {
 }
 
 
-export default function Courses({userId}: {userId?: string}) {
+export default function Courses() {
     const [courses, setCourses] = useState<Product[]>([])
 
     useEffect(() => {
         fetch('/api/purchases')
             .then(r => r.json())
             .then(data => {
-                console.log(data)
                 setCourses(data)
             })
     }, [])

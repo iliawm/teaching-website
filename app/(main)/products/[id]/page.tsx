@@ -22,7 +22,7 @@ export default async function ProductPage ({ params }: { params: Promise<{ id: s
             <Link href={"/"} className={"rounded-2xl bg-indigo-600 w-14 h-14 top-0 right-0 mt-4 mr-5 fixed text-2xl text-white font-semibold flex items-center justify-center"}><IoHome /></Link>
             <div className={"h-fit  w-full  bg-white  rounded-3xl flex  overflow-x-hidden overflow-y-hidden  scrollbar-hide flex-col md:flex-row gap-6 p-3 md:pb-30"}>
                 <div className="h-fit">
-                <Image src={products?.image || "/temp.png"} width={1800} height={1800} alt={products?.title || "product"} className={"rounded-3xl  w-full md:h-125"}/>
+                <Image src={products?.image || "/temp.png"} width={1800} height={1800} alt={products?.title || "product"} className={"rounded-3xl  w-full md:h-125 object-cover"}/>
                 </div>
                 
                 <div className="flex-col gap-2 flex md:w-full ">
