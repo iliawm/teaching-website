@@ -28,7 +28,7 @@ async function handleSubmit(e: React.FormEvent) {
             SetError(result.error.message ?? "failed to sign up");
         }
         else {
-            router.push("/dashboard")
+            router.push("/dashboard?section=profile")
         }
 
     }

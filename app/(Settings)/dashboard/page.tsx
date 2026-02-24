@@ -24,7 +24,7 @@ export default function DashboardClient() {
         if (section === "profile") page = <Profile />
         else if (section === "security") page = <Security />
         else if (section === "other") page = <Other />
-        else if (section === "courses") page = <Courses userId={session.user.id} />
+        else if (section === "courses") page = <Courses />
         else if (section === "videos") page = <Video />
         else if (section === "books") page = <Books />
         else if (section === "status") page = <Status />

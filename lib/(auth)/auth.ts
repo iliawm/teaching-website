@@ -26,6 +26,33 @@ export const auth = betterAuth({
     }),
     emailAndPassword: {
         enabled: true,
+    },
+    user:{
+        additionalFields:{
+            role:{
+            type: "string",
+                defaultValue:"user",
+                enum: ["user", "admin", "moderator","teacher"]
+            },
+            image:{
+                type:"string",
+                defaultValue:"/temp.png"
+            },
+            review:{
+                type:"number",
+                defaultValue:0,
+            },
+            desc:{
+                type:"string",
+                defaultValue:"no description",
+            },
+            PhoneNumber:{
+                type:"string",
+                defaultValue:""
+                
+            }
+            
+        }
     }
 });
 
