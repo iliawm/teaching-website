@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import Purchase from '@/models/Purchase'
 import mongoose from 'mongoose'
 import { getSession } from '@/lib/(auth)/auth'
-
+import Product from '@/models/product'
 await mongoose.connect(process.env.MONGODB_URI!)
 
 export async function POST(request: NextRequest) {
