@@ -21,7 +21,7 @@ export function More() {
                     <div  className={"w-full h-30 flex justify-end gap-10 border border-gray-200 shadow-xl shadow-gray-300 rounded-xl"}>
                         <div className={"w-full flex gap-15 p-3"}>
                             <div className={"w-1/2 h-full flex justify-center items-center"}>
-                                <div className={"w-full flex"}>Delete Account</div>
+                                <div className={"w-full flex line-through"}>Delete Account</div>
                             </div>
                             <div className={"w-1/2 h-full flex justify-end items-center"}>
                             <button className={"w-30 h-10 bg-red-500 rounded-xl text-white text-center cursor-pointer hover:opacity-85 lex justify-end items-center"} disabled={true}>

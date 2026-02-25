@@ -15,7 +15,7 @@ export default async function Products(){
         <div className={"w-full min-h-screen  p-3 md:p-10 bg-gray-200"}>
             <div className={"w-full h-full min-h-screen bg-[snow] rounded-3xl border-b "}>
                 <Navbar/>
-                <div className={"w-full h-fit p-10 overflow-y-scroll flex flex-wrap gap-10 pb-0 overflow-x-hidden items-center "}>
+                <div className={"w-full h-fit p-10 overflow-y-scroll flex flex-wrap gap-10 pb-30 overflow-x-hidden items-center scrollbar-hide "}>
                 
                 {products.map((e:Product)=>{
                     return (

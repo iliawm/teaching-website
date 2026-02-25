@@ -39,7 +39,7 @@ export default function DashboardClient() {
             <Dashboard setOpenA={setOpen} open={open}/>
             <DashboardNavhandle setOpenA={setOpen} open={open}/>
             <div className={`${session?.user?"":"w-full md:w-full"} md:w-8/10 h-full flex justify-center overflow-y-scroll`}>
-                <div className={`md:w-9/10 w-full flex min-w-screen md:min-w-fit h-screen md:relative justify-center items-center overflow-y-scroll scrollbar-hide ${session?.user ? "pt-20" : "w-full md:w-full top-0 h-full"}`}>
+                <div className={`md:w-9/10 w-full flex min-w-screen md:min-w-fit h-screen md:relative justify-center items-center overflow-y-scroll scrollbar-hide ${session?.user ? "pt-10" : "w-full md:w-full top-0 h-full"}`}>
                     {page}
                 </div>
             </div>

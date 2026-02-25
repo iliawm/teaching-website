@@ -6,9 +6,9 @@ import { TiFolderDelete } from "react-icons/ti";
 import { MdVideoSettings , MdOutlineMedicalInformation , MdSupportAgent } from "react-icons/md";
 import { PiChalkboardTeacherLight ,PiBooks } from "react-icons/pi";
 import { CgMoreR } from "react-icons/cg";
-import { useSearchParams } from "next/navigation";
 
-export function Dashboard({open, setOpenA}: {open: boolean, setOpenA: (v: boolean) => void}) {
+
+export function Dashboard({open }: {open: boolean, setOpenA: (v: boolean) => void}) {
 
 
     return (
@@ -26,7 +26,7 @@ export function Dashboard({open, setOpenA}: {open: boolean, setOpenA: (v: boolea
                     <IoLockOpenOutline className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">security</div>
                 </Link>
-                <Link href={`/dashboard/?section=other`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
+                <Link href={`/dashboard/?section=other`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear line-through" >
                     <TiFolderDelete className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Other</div>
                 </Link>
@@ -36,21 +36,21 @@ export function Dashboard({open, setOpenA}: {open: boolean, setOpenA: (v: boolea
                     <PiChalkboardTeacherLight className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Courses</div>
                 </Link>
-                <Link href={`/dashboard/?section=videos`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
+                <Link href={`/dashboard/?section=videos`} className="w-full line-through h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
                     <MdVideoSettings className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Videos</div>
                 </Link>
-                <Link href={`/dashboard/?section=books`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
+                <Link href={`/dashboard/?section=books`} className="w-full h-8/100 line-through opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
                     <PiBooks className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Books</div>
                 </Link>
-                <Link href={`/dashboard/?section=status`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
+                <Link href={`/dashboard/?section=status`} className="w-full h-8/100 opacity-95 line-through gap-3 flex items-center justify-start min-h-8.25 hover:bg-gray-400 transition-all duration-1000 ease-linear">
                     <MdOutlineMedicalInformation className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Status</div>
                 </Link>
                 {/*division*/}
                 <div className="owned mt-2 text-base opacity-50">Advanced</div>
-                <Link href={`/dashboard/?section=support`} className="w-full h-8/100 opacity-95 gap-3 flex items-center justify-start min-h-8.25 hover:bg-green-500 transition-all duration-1000 ease-linear">
+                <Link href={`/dashboard/?section=support`} className="w-full h-8/100 opacity-95 gap-3 line-through flex items-center justify-start min-h-8.25 hover:bg-green-500 transition-all duration-1000 ease-linear">
                     <MdSupportAgent className={"text-lg w-10"}/>
                     <div className="w-full flex items-cente justify-start">Support</div>
                 </Link>
