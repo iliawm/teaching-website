@@ -39,6 +39,7 @@ export async function GET() {
     if (!session?.user) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
+    mongoose.models.Product || mongoose.model('Product', Product.schema)
 
     const purchases = await Purchase.find({ user: session.user.id }).populate('products')
     return NextResponse.json(purchases.map(p => p.products))
