@@ -6,13 +6,17 @@ import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card";
 import Image from "next/image";
 import {MdArrowForwardIos} from "react-icons/md";
 import Navbar from "@/Components/Navbar";
-import {useSearchParams} from "next/navigation";
 
 
-export default async function Products(){
+export default async function Products({searchParams}:{searchParams:Promise<{search?:string}>}){
     await mongoose.connect(process.env.MONGODB_URI!)
+    const params = await searchParams
+    const searchQuery = params.search
+    const products = await ProductModel.find(
+        searchQuery ? { title: { $regex: searchQuery, $options: 'i' } } : {}
+    ).lean()
+    
 
-    const products = await ProductModel.find().lean()
     return(
         <div className={"w-full min-h-screen  p-3 md:p-10 bg-gray-200"}>
             <div className={"w-full h-full min-h-screen bg-[snow] rounded-3xl border-b "}>
