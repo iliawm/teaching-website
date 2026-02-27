@@ -6,10 +6,12 @@ import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card";
 import Image from "next/image";
 import {MdArrowForwardIos} from "react-icons/md";
 import Navbar from "@/Components/Navbar";
+import {useSearchParams} from "next/navigation";
 
 
 export default async function Products(){
     await mongoose.connect(process.env.MONGODB_URI!)
+
     const products = await ProductModel.find().lean()
     return(
         <div className={"w-full min-h-screen  p-3 md:p-10 bg-gray-200"}>
