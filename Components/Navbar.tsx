@@ -5,7 +5,7 @@ import {useSession} from "@/lib/(auth)/auth-cient";
 import {useState} from "react";
 import Notification from "@/Ui/Notif";
 import { MdHome } from "react-icons/md";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import { CiSearch } from "react-icons/ci";
 
 
@@ -14,8 +14,9 @@ export default function Navbar() {
     const logged_in = session?.user
     const [open,setOpen]=useState(false)
     const router = useRouter()
-    const [search,setsearch]=useState(false) 
-    
+    const [search,setsearch]=useState(false)
+    const pathname = usePathname()
+
     return (
         <div className="w-full  flex justify-center mb-10 relative" >
         <div className="bg-white w-full flex justify-between items-center h-15.5 rounded-full md:px-7 opacity-60 px-3">
@@ -63,8 +64,13 @@ export default function Navbar() {
                 </div>
             
             <button className={`top-l md:w-15 lg:text-4xl flex justify-center text-2xl w-fit cursor-pointer hover:opacity-70 mr-2 text-indigo-600 `} onClick={()=>{
-                setsearch(!search)
                 
+                if(pathname === "/"){
+                router.push("/products")
+            }
+            else if (pathname === "/products"){
+                    setsearch(!search)
+                }
             }}>
                 <CiSearch />
             </button>

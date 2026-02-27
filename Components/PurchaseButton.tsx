@@ -1,11 +1,12 @@
 "use client"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import {useSession} from "@/lib/(auth)/auth-cient";
 
 export default function PurchaseButton({productId, price}: { productId: string, price: number }) {
     const [loading, setLoading] = useState(false)
     const router = useRouter()
-
+    const session = useSession()
     const handlePurchase = async () => {
         setLoading(true)
         const res = await fetch('/api/purchases', {
@@ -15,10 +16,11 @@ export default function PurchaseButton({productId, price}: { productId: string, 
         })
         const data = await res.json()
 
-        if (data.error) {
-            alert(data.error)
+        if (data.error || !session.data) {
+            router.push('/auth/signin')
             setLoading(false)
-        } else {
+        }
+        else {
             alert('Purchase successful!')
             router.refresh() 
         }
