@@ -41,3 +41,5 @@ teaching-website/
 ├── types/ # Global TypeScript type definitions
 └── public/ # Static assets
 **
+<img width="764" height="478" alt="1776002260-pc74" src="https://github.com/user-attachments/assets/991d7787-0879-4e7f-b58d-4b3a8ec322bf" />
+
